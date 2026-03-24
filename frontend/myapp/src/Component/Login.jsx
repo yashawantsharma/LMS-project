@@ -1,6 +1,7 @@
 import axios from 'axios'
 import React, { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
+import api from "../axios/axiosApi"
 
 const Login = ({ switchToSignup }) => {
     const [loginInput, setLoginInput] = useState({
@@ -27,7 +28,7 @@ const Login = ({ switchToSignup }) => {
         if (Object.keys(validationErrors).length === 0) {
             try {
                 const response = await axios.post(
-                    "http://localhost:4040/users/login",
+                    `${api}/users/login`,
                     loginInput
                 );
 
