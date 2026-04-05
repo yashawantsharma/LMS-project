@@ -28,7 +28,7 @@ const Login = ({ switchToSignup }) => {
         if (Object.keys(validationErrors).length === 0) {
             try {
                 const response = await axios.post(
-                    `${api}/users/login`,
+                    `http://localhost:4040/users/login`,
                     loginInput
                 );
 
